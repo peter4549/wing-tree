@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WingTree</string>
+
+    <!-- NotificationFragment -->
+    <string name="notification_fragment_000">미확인 알림</string>
+    <string name="notification_fragment_001">전체 알림</string>
+
+    <!-- MainBottomNavigationBar -->
+    <string name="main_bottom_navigation_bar_000">스터디</string>
+    <string name="main_bottom_navigation_bar_001">할 일</string>
+    <string name="main_bottom_navigation_bar_002">채팅</string>
+    <string name="main_bottom_navigation_bar_003">알림</string>
+    <string name="main_bottom_navigation_bar_004">더보기</string>
+</resources>

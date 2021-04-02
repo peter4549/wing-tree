@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="mainBottomNavigationBar"
+            type="com.duke.orca.android.kotlin.wingtree.widget.MainBottomNavigationBar" />
+    </data>
+
+    <!-- TODO: android:background -->
+    <LinearLayout
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/llFlow_Cloud"
+            android:weightSum="5"
+            android:orientation="horizontal"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_navigation_bar_height">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clHome_e"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{(view) -> mainBottomNavigationBar.onViewClick(view)}">
+
+                <ImageView
+                    android:id="@+id/ivHome_e"
+                    app:layout_constraintTop_toTopOf="@+id/clHome_e"
+                    app:layout_constraintBottom_toTopOf="@+id/tvHome_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clHome_e"
+                    app:layout_constraintRight_toRightOf="@+id/clHome_e"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    app:srcCompat="@drawable/ic_outline_home_24" />
+
+                <TextView
+                    android:id="@+id/tvHome_e"
+                    app:layout_constraintTop_toBottomOf="@+id/ivHome_e"
+                    app:layout_constraintBottom_toBottomOf="@+id/clHome_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textStyle="normal"
+                    android:lineSpacingExtra="9sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#a6a8a9"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:text="@string/main_bottom_navigation_bar_000"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clTask_e"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{(view) -> mainBottomNavigationBar.onViewClick(view)}">
+
+                <ImageView
+                    android:id="@+id/ivTask_e"
+                    app:layout_constraintTop_toTopOf="@+id/clTask_e"
+                    app:layout_constraintBottom_toTopOf="@+id/tvTask_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clTask_e"
+                    app:layout_constraintRight_toRightOf="@+id/clTask_e"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="13dp"
+                    android:layout_marginTop="11dp"
+                    app:srcCompat="@drawable/ic_outline_format_list_numbered_24" />
+                <TextView
+                    android:id="@+id/tvTask_e"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTask_e"
+                    app:layout_constraintBottom_toBottomOf="@+id/clTask_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textStyle="normal"
+                    android:lineSpacingExtra="9sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#a6a8a9"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:text="@string/main_bottom_navigation_bar_001"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clChat_e"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{(view) -> mainBottomNavigationBar.onViewClick(view)}">
+
+                <ImageView
+                    android:id="@+id/ivChat_e"
+                    app:layout_constraintTop_toTopOf="@+id/clChat_e"
+                    app:layout_constraintBottom_toTopOf="@+id/tvChat_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clChat_e"
+                    app:layout_constraintRight_toRightOf="@+id/clChat_e"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:srcCompat="@drawable/ic_outline_chat_bubble_outline_24" />
+
+                <TextView
+                    android:id="@+id/tvChat_e"
+                    app:layout_constraintTop_toBottomOf="@+id/ivChat_e"
+                    app:layout_constraintBottom_toBottomOf="@+id/clChat_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textStyle="normal"
+                    android:lineSpacingExtra="9sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#a6a8a9"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:text="@string/main_bottom_navigation_bar_002"/>
+
+                <!-- TODO: android:background -->
+                <TextView
+                    tools:visibility="visible"
+                    android:id="@+id/tvChatBadge_e"
+                    app:layout_constraintTop_toTopOf="@+id/clChat_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clChat_e"
+                    app:layout_constraintRight_toRightOf="@+id/clChat_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="32dp"
+                    android:background="@color/teal_200"
+                    android:elevation="1.1dp"
+                    android:gravity="center"
+                    android:minWidth="18dp"
+                    tools:text="30"
+                    android:textColor="#ffffff"
+                    android:visibility="gone"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAlram_e"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{(view) -> mainBottomNavigationBar.onViewClick(view)}">
+
+                <ImageView
+                    android:id="@+id/ivAlram_e"
+                    app:layout_constraintTop_toTopOf="@+id/clAlram_e"
+                    app:layout_constraintBottom_toTopOf="@+id/tvAlram_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clAlram_e"
+                    app:layout_constraintRight_toRightOf="@+id/clAlram_e"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/ic_outline_notifications_24"/>
+
+                <TextView
+                    android:id="@+id/tvAlram_e"
+                    app:layout_constraintTop_toBottomOf="@+id/ivAlram_e"
+                    app:layout_constraintBottom_toBottomOf="@+id/clAlram_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textStyle="normal"
+                    android:lineSpacingExtra="9sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#a6a8a9"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:text="@string/main_bottom_navigation_bar_003"/>
+
+                <!-- TODO: android:background -->
+                <TextView
+                    tools:visibility="visible"
+                    android:id="@+id/tvAlramBadge_e"
+                    app:layout_constraintTop_toTopOf="@+id/clAlram_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clAlram_e"
+                    app:layout_constraintRight_toRightOf="@+id/clAlram_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="27dp"
+                    android:background="@color/teal_200"
+                    android:elevation="1.1dp"
+                    android:gravity="center"
+                    android:minWidth="18dp"
+                    tools:text="30"
+                    android:textColor="#ffffff"
+                    android:includeFontPadding="false"
+                    android:textSize="12sp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clMy_e"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{(view) -> mainBottomNavigationBar.onViewClick(view)}">
+
+                <ImageView
+                    android:id="@+id/ivMy_e"
+                    app:layout_constraintTop_toTopOf="@+id/clMy_e"
+                    app:layout_constraintBottom_toTopOf="@+id/tvMy_e"
+                    app:layout_constraintLeft_toLeftOf="@+id/clMy_e"
+                    app:layout_constraintRight_toRightOf="@+id/clMy_e"
+                    app:layout_constraintVertical_chainStyle="spread_inside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:srcCompat="@drawable/ic_outline_more_horiz_24" />
+                <TextView
+                    android:id="@+id/tvMy_e"
+                    app:layout_constraintTop_toBottomOf="@+id/ivMy_e"
+                    app:layout_constraintBottom_toBottomOf="@+id/clMy_e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11sp"
+                    android:textStyle="normal"
+                    android:lineSpacingExtra="9sp"
+                    android:includeFontPadding="false"
+                    android:textColor="#a6a8a9"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:text="@string/main_bottom_navigation_bar_004"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

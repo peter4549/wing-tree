@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_spacing_small">16dp</dimen>
+    <dimen name="layout_spacing_medium">32dp</dimen>
+    <dimen name="layout_spacing_large">64dp</dimen>
+    <dimen name="layout_spacing_extra_large">128dp</dimen>
+
+    <dimen name="view_spacing_small">8dp</dimen>
+    <dimen name="view_spacing_medium">16dp</dimen>
+    <dimen name="view_spacing_large">24dp</dimen>
+    <dimen name="view_spacing_extra_large">48dp</dimen>
+
+    <dimen name="bottom_navigation_bar_height">53dp</dimen>
+</resources>
