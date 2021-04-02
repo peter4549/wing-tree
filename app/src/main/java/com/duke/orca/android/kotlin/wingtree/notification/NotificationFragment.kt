@@ -4,31 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.duke.orca.android.kotlin.wingtree.R
 import com.duke.orca.android.kotlin.wingtree.base.BaseFragment
 import com.duke.orca.android.kotlin.wingtree.databinding.FragmentNotificationBinding
 import com.duke.orca.android.kotlin.wingtree.notification.adapter.NotificationFragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
-class NotificationFragment: BaseFragment() {
-
-    private lateinit var dataBinding: FragmentNotificationBinding
+class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
+    override val layoutId: Int
+        get() = R.layout.fragment_notification
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        dataBinding = FragmentNotificationBinding.inflate(inflater, container, false)
+        val view = super.onCreateView(inflater, container, savedInstanceState)
 
         initializeView()
 
-        return dataBinding.root
+        return view
     }
 
     private fun initializeView() {
-        dataBinding.viewPager2.adapter = NotificationFragmentStateAdapter(requireActivity())
-       TabLayoutMediator(dataBinding.tabLayout, dataBinding.viewPager2) { tab, position ->
-           tab.tag = position
-       }.attach()
+        binding.viewPager2.adapter = NotificationFragmentStateAdapter(requireActivity())
+        TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.tag = position
+        }.attach()
     }
 }
