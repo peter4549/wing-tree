@@ -2,18 +2,14 @@ package com.duke.orca.android.kotlin.wingtree.notification.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.duke.orca.android.kotlin.wingtree.databinding.NotificationItemBinding
+import com.duke.orca.android.kotlin.wingtree.notification.data.NotificationItem
 
 class NotificationAdapter(private val onItemClick: (binding: NotificationItemBinding, item: NotificationItem) -> Unit):
-    RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
-    private val notifications = arrayListOf<NotificationItem>()
-
-    fun addAll(list: List<NotificationItem>) {
-        val positionStart = notifications.count()
-        notifications.addAll(list)
-        notifyItemRangeChanged(positionStart, list.count())
-    }
+    ListAdapter<NotificationItem, NotificationAdapter.ViewHolder>(NotificationDiffCallback()) {
 
     inner class ViewHolder(private val binding: NotificationItemBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: NotificationItem) {
@@ -39,15 +35,16 @@ class NotificationAdapter(private val onItemClick: (binding: NotificationItemBin
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(notifications[position])
+        holder.bind(getItem(position))
     }
-
-    override fun getItemCount(): Int = notifications.count()
 }
 
-data class NotificationItem(
-    val action: String,
-    val message: String,
-    val registrationTime: Long,
-    val studyName: String,
-)
+class NotificationDiffCallback(): DiffUtil.ItemCallback<NotificationItem>() {
+    override fun areItemsTheSame(oldItem: NotificationItem, newItem: NotificationItem): Boolean {
+        return oldItem == newItem
+    }
+
+    override fun areContentsTheSame(oldItem: NotificationItem, newItem: NotificationItem): Boolean {
+        return oldItem == newItem
+    }
+}

@@ -7,10 +7,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".main.MainActivity">
 
-        <FrameLayout
-            android:id="@+id/frame_layout_menu"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view_tab"
             android:layout_width="128dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/layout_spacing_small"
@@ -19,8 +19,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <FrameLayout
-            android:id="@+id/frame_layout_content"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view_content"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/layout_spacing_small"
@@ -28,7 +28,7 @@
             android:layout_marginTop="@dimen/layout_spacing_small"
             app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation_bar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/frame_layout_menu"
+            app:layout_constraintStart_toEndOf="@+id/fragment_container_view_tab"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.duke.orca.android.kotlin.wingtree.widget.MainBottomNavigationBar

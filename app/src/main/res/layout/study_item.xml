@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="112dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text_view_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_spacing_small"
+                android:layout_marginTop="@dimen/layout_spacing_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Android" />
+
+            <TextView
+                android:id="@+id/text_view_user_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_spacing_small"
+                android:layout_marginStart="@dimen/layout_spacing_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="10명 참여중" />
+
+            <com.like.LikeButton
+                android:id="@+id/like_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="@dimen/layout_spacing_small"
+                android:layout_marginEnd="@dimen/layout_spacing_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:anim_scale_factor="2"
+                app:circle_end_color="@color/teal_200"
+                app:circle_start_color="@color/teal_200"
+                app:dots_primary_color="@color/teal_200"
+                app:dots_secondary_color="@color/teal_200"
+                app:icon_size="32dp"
+                app:icon_type="Star"
+                app:is_enabled="true"
+                app:like_drawable="@drawable/ic_round_star_like_24"
+                app:liked="false"
+                app:unlike_drawable="@drawable/ic_round_star_unlike_24"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

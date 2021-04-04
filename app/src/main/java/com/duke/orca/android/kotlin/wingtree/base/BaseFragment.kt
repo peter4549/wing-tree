@@ -22,11 +22,11 @@ abstract class BaseFragment<VDB: ViewDataBinding>: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        setDummyData()
+
         return binding.root
     }
 
-    protected fun setDummyData() {
+    protected open fun setDummyData() {
 
     }
 }

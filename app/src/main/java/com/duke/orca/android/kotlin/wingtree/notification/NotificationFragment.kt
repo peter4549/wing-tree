@@ -28,7 +28,14 @@ class NotificationFragment: BaseFragment<FragmentNotificationBinding>() {
 
     private fun initializeView() {
         binding.viewPager2.adapter = NotificationFragmentStateAdapter(requireActivity())
+
+        val tabTexts = arrayOf(
+            getString(R.string.notification_fragment_000),
+            getString(R.string.notification_fragment_001)
+        )
+
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.text = tabTexts[position]
             tab.tag = position
         }.attach()
     }
